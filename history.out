@@ -1,0 +1,139 @@
+    1  ip a
+    2  tldr
+    3  dnf --help
+    4  clear
+    5  sudo dnf update
+    6  sudo dnf install tealdeer neovim
+    7  tldr --update
+    8  sudo dnf install fzf
+    9  sudo dnf install tree
+   10  cat /etc/locale.conf 
+   11  sudo nvim /etc/environment 
+   12  clear
+   13  sudoedit /etc/locale.conf 
+   14  reboot
+   15  sudo dnf --update
+   16  sudo dnf update
+   17  sudoedit /etc/ssh/sshd_config
+   18  сдуфк
+   19  sudoedit /etc/ssh/sshd_config
+   20  sudo systemctl status sshd
+   21  cl
+   22  clear
+   23  sudo systemctl status sshd
+   24  sudoedit /etc/ssh/sshd_config
+   25  sudo systemctl restart sshd
+   26  cd .ssh
+   27  mv known_hosts authorized_keys
+   28  clear
+   29  poweroff
+   30  sudo poweroff
+   31  users
+   32  cl
+   33  clear
+   34  hostname
+   35  sudo hostnamectl set-hostname "mephi-2026.domain.local"
+   36  reboot 
+   37  sudo reboot 
+   38  hostname
+   39  sudo hostnamectl set-hostname "mephi-2026.domain.local"
+   40  $ ping -c 4 8.8.8.8
+   41  ping -c 4 8.8.8.8
+   42  ping -c 4 8.8.8.8 > ping.out
+   43  cat ping.out 
+   44  clear
+   45  sudo dnf upgrade --refresh
+   46  dnf history 
+   47  sudo dnf remove tcpdump-14:4.99.5-1.red80.x86_64 
+   48  sudo dnf install nginx libcap-ng-utils
+   49  cat dnf.out 
+   50  ls /tmp/
+   51  cat dnf.out 
+   52  nv dnf.out 
+   53  nvim dnf.out 
+   54  nv dnf.out 
+   55  nvim dnf.out 
+   56  clear
+   57  cl
+   58  tail dnf.out 
+   59  sudo poweroff
+   60  lsblk
+   61  sudo cfdisk /dev/vdb
+   62  sudo mkfs.ext4 -L MEPHI_WEB /dev/vdb
+   63  sudo mkfs.ext4 -L MEPHI_WEB /dev/vdb1 
+   64  clear
+   65  systemctl status nginx
+   66  clear
+   67  sudo systemctl enable --now nginx
+   68  sudo mkdir /mephi-web
+   69  echo "LABEL=MEPHI_WEB /mephi-web ext4 defaults 0 2" >> /etc/fstab
+   70  sudo echo "LABEL=MEPHI_WEB /mephi-web ext4 defaults 0 2" >> /etc/fstab
+   71  echo "LABEL=MEPHI_WEB /mephi-web ext4 defaults 0 2"  /etc/fstab
+   72  echo "LABEL=MEPHI_WEB /mephi-web ext4 defaults 0 2" | sudo tee --append /etc/fstab
+   73  cat /etc/fstab 
+   74  mount -a
+   75  sudo mount -a
+   76  sudo systemctl daemon-reload 
+   77  lsblk
+   78  journalctl -u nginx -b
+   79  journalctl -u nginx -b > journalctl.out
+   80  cat journalctl.out 
+   81  sudo groupadd project
+   82  sudo groupadd -g 4444 curators
+   83  sudo useradd -u 5501 -G project user1
+   84  sudo useradd -u 5502 -G project user2
+   85  sudo useradd -u 5503 -G project user3
+   86  sudo useradd -g curators curator1
+   87  sudo useradd -g curators curator2
+   88  mkdir -p /data/mephi-2026
+   89  sudo mkdir -p /data/mephi-2026
+   90  ls -ld /data/mephi-2026/
+   91  sudo getfacl -d /data/mephi-2026/
+   92  sudo setfacl -m g:project:rwx,g:curators:r-x,o::--- /data/mephi-2026/
+   93  sudo getfacl -d /data/mephi-2026/
+   94  sudo getfacl /data/mephi-2026/
+   95  sudo setfacl -d -m g:project:rwx,g:curators:r-x,o::--- /data/mephi-2026/
+   96  sudo getfacl /data/mephi-2026/
+   97  sudo -u user1 tcpdump 
+   98  which tcpdump
+   99  setcap cap_net_raw,cap_net_admin=eip $(which tcpdump)
+  100  sudo setcap cap_net_raw,cap_net_admin=eip $(which tcpdump)
+  101  sudo -u user1 tcpdump 
+  102  sudo setenforce 1
+  103  grep "SELINUX=" /etc/selinux/config
+  104  grep "^SELINUX=" /etc/selinux/config
+  105  semanage fcontext -a -t httpd_sys_content_t "/mephi-web(/.*)?"
+  106  sudo semanage fcontext -a -t httpd_sys_content_t "/mephi-web(/.*)?"
+  107  dnf install policycoreutils-python-utils
+  108  sudo dnf install policycoreutils-python-utils
+  109  sudo semanage fcontext -a -t httpd_sys_content_t "/mephi-web(/.*)?"
+  110  restorecon -Rv /mephi-web
+  111  sudo restorecon -Rv /mephi-web
+  112  ls -ld /mephi-web/
+  113  sudo usermod -s /sbin/nologin curator1
+  114  sudo usermod -s /sbin/nologin curator2
+  115  sudo chage -M 90 user1 user2 user3 curator1 curator2
+  116  sudo chage -M 90 user1
+  117  sudo chage -M 90 user2
+  118  sudo chage -M 90 user3
+  119  sudo chage -M 90 curator1
+  120  sudo chage -M 90 curator2
+  121  grep "minlen=" /etc/security/pwquality.conf
+  122  cat /etc/security/pwquality.conf
+  123  sudo echo "minlen=12" >> /etc/security/pwquality.conf
+  124  echo "minlen=12" | sudo tee --append /etc/security/pwquality.conf
+  125  cat /etc/security/pwquality.conf
+  126  echo "Hello from Student: М265863" > /mephi-web/index.html
+  127  echo "Hello from Student: М265863" | sudo tee /mephi-web/index.html
+  128  curl http://localhost/
+  129  sed -i 's|root .*/usr/share/nginx/html;|root /mephi-web;|' /etc/nginx/nginx.conf
+  130  sudo sed -i 's|root .*/usr/share/nginx/html;|root /mephi-web;|' /etc/nginx/nginx.conf
+  131  sudo nginx -t
+  132  sudo systemctl restart nginx.service 
+  133  curl http://localhost/
+  134  clear
+  135  curl http://localhost/
+  136  clear
+  137  sudo cat /mephi-web/index.html 
+  138  curl http://localhost/
+  139  history > ~/history.out

@@ -1,0 +1,12 @@
+ID     | Command line             | Date and time    | Action(s)      | Altered
+-------------------------------------------------------------------------------
+    10 | install policycoreutils- | 2026-11-02 23:07 | Install        |    8  <
+     9 | install nginx libcap-ng- | 2026-11-02 19:50 | Install        |    8 > 
+     8 | remove tcpdump-14:4.99.5 | 2026-11-02 19:50 | Removed        |    1   
+     7 | upgrade --refresh        | 2026-11-02 19:46 | I, U           |   72 EE
+     6 | install tcpdump          | 2026-10-02 23:31 | Install        |    1   
+     5 | install tree             | 2026-10-02 23:12 | Install        |    1   
+     4 | install fzf              | 2026-10-02 23:12 | Install        |    1   
+     3 | install tealdeer neovim  | 2026-10-02 23:11 | Install        |   24   
+     2 | update                   | 2026-10-02 23:09 | I, O, U        |  119 E<
+     1 |                          | 2026-10-02 22:59 | Install        |  661 >E
